@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation.xml"
+    app:startDestination="@id/jackpetFirstFragment" >
+    <fragment
+        android:id="@+id/jackpetFirstFragment"
+        android:name="com.o7services.listactivity.Jetpack.JetpackFirstFragment"
+        android:label="fragment_jackpet_first"
+        tools:layout="@layout/fragment_jackpet_first" >
+        <action
+            android:id="@+id/action_jackpetFirstFragment_to_navFirstFragment2"
+            app:destination="@id/navFirstFragment2"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/navFirstFragment2"
+        android:name="com.o7services.listactivity.Jetpack.JetpackSecondFragment"
+        android:label="fragment_jetpack_second"
+        tools:layout="@layout/fragment_jetpack_second" >
+        <action
+            android:id="@+id/action_navFirstFragment2_to_jetpackThirdFragment"
+            app:destination="@id/jetpackThirdFragment"
+            app:popUpTo="@id/jackpetFirstFragment"
+            app:popUpToInclusive="false"/>
+    </fragment>
+    <fragment
+        android:id="@+id/jetpackThirdFragment"
+        android:name="com.o7services.listactivity.Jetpack.JetpackThirdFragment"
+        android:label="fragment_jetpack_third"
+        tools:layout="@layout/fragment_jetpack_third" >
+        <action
+            android:id="@+id/action_jetpackThirdFragment_to_jackpetFirstFragment"
+            app:destination="@id/jackpetFirstFragment" />
+    </fragment>
+</navigation>
